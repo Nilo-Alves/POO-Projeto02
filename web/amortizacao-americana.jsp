@@ -12,7 +12,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%@include file="WEB-INF/jspf/menu.jspf" %>
+        <header align="center">
+            <%@include file="WEB-INF/jspf/menu.jspf" %>
+        </header>
         <h1>Amortization</h1>
+        
+        <footer align="center">
+            © 06/09 - 13/09. Todos os direitos reservados
+        </footer>
     </body>
 </html>

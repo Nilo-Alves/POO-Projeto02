@@ -8,11 +8,19 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            @import url("")
+        </style>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
-        <%@include file="WEB-INF/jspf/menu.jspf" %>
+        <header align="center">
+            <%@include file="WEB-INF/jspf/menu.jspf" %>
+        </header>
         <h1>Tabela Price</h1>
+        <footer align="center">
+            © 06/09 - 13/09. Todos os direitos reservados
+        </footer>
     </body>
 </html>
