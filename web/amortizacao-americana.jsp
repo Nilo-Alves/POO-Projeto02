@@ -27,7 +27,7 @@
             catch(Exception ex){}
         %>
         
-        <br/>
+        <hr/>
         <h1>Sistema de Amortização Americano (SAA)</h1>
         <hr/>
         <br/>
@@ -76,7 +76,7 @@
             <br/>
         
         <footer align="center">
-            © 06/09 - 13/09. Todos os direitos reservados
+            <%@include file="WEB-INF/jspf/footer.jspf" %>
         </footer>
     </body>
 </html>

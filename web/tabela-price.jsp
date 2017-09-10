@@ -20,7 +20,7 @@
         </header>
         <h1>Tabela Price</h1>
         <footer align="center">
-            © 06/09 - 13/09. Todos os direitos reservados
+            <%@include file="WEB-INF/jspf/footer.jspf" %>
         </footer>
     </body>
 </html>

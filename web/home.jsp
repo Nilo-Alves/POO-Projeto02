@@ -10,10 +10,12 @@
             <%@include file="WEB-INF/jspf/menu.jspf" %>
         </header>
         
-        <h1>Hello World!</h1>
+        <hr/>
+        <h1>Sistemas de Amortização</h1>
+        <hr/>
         
         <footer align="center">
-            © 06/09 - 13/09. Todos os direitos reservados
+            <%@include file="WEB-INF/jspf/footer.jspf" %>
         </footer>
     </body>
 </html>
