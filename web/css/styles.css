@@ -1,18 +1,52 @@
+header{
+    font-size: 13px;
+}
+body{
+    font-family: Arial;
+}
+.p-1{
+    font-size: 14px;
+}
+h1{
+    text-align: center;
+}
+#text-1{
+        text-align: center;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 16px;
+}
 #home-col1{
-	width: 32%; 
+	width: 29%; 
 	float: left;
-	margin-right: 0.5%;
-	margin-left: 1%;
+	margin-right: 2%;
+	margin-left: 2.5%;
+        text-align: center;
 }
 #home-col2{
-	width: 32%; 
+	width: 29%; 
 	float: right;
-	margin-right: 0.5%;
-	margin-left: 0.5%;
+	margin-right: 2%;
+	margin-left: 2%;
+        text-align: center;
 }
 #home-col3{
-	width: 32%; 
+	width: 29%; 
 	float: right;
-	margin-right: 1%;
-	margin-left: 0.5%;
+	margin-right: 2.5%;
+	margin-left: 2%;
+        text-align: center;
+}
+.home-button{
+        height: 35px;
+        width: 90px;
+        background-color: white;
+        border-radius: 20%;
+        border-color: black;
+        border-width: 2px;
+        cursor: pointer;
+}
+footer{
+    font-size: 13px;
+    clear: both; 
 }
