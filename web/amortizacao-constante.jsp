@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Amortização Constante</title>
     </head>
     <body>
         <header align="center">
@@ -27,24 +27,26 @@
             try {n = Integer.parseInt(request.getParameter("tempo"));}
             catch(Exception ex){}
         %>
-        
-        <h1>Sistema de Amortização Constante (SAC)</h1><br/>
+        <br/>
+        <h1>Sistema de Amortização Constante (SAC)</h1>
         <hr/>
+        <br/>
         
         <form>
             Saldo Devedor:
-            <input type="number" name="saldo" value="<%=s%>"/>
+            <input type="number" name="saldo" value="<%=s%>"/><br/><br/>
             Juros:
-            <input type="number" name="indice" value="<%=i%>"/>
+            <input type="number" name="indice" value="<%=i%>"/><br/><br/>
             Período:
-            <input type="number" name="tempo" value="<%=n%>"/>
+            <input type="number" name="tempo" value="<%=n%>"/><br/><br/>
             <input type="submit" value="Calcular">
         </form>
+        <br/>
             
             <table border="1">
-                <%=saux = s%>
-                <%=a = s / n%>
-                <%=j = (i/100)%>
+                <%saux = s;%>
+                <%a = s / n;%>
+                <%j = (i/100);%>
                 <tr><th>Período</th><th>Prestação</th><th>Juros</th><th>Amortização</th><th>Saldo Devedor</th></tr>
                 <tr><td>0</td><td></td><td></td><td></td><td><%=s%></td></tr>
                                 
@@ -52,18 +54,19 @@
                     <tr>
                         <td><%=k%></td>
                         <td><%=a+(j*saux)%></td>
-                        <%=aux = aux + (a+(j*saux))%>
+                        <%aux = aux + (a+(j*saux));%>
                         <td><%=j * saux%></td>
-                        <%=cont = cont + (j*saux)%>
+                        <%cont = cont + (j*saux);%>
                         <td><%=a%></td>
                         <td><%=saux = saux - a%></td>
                     </tr>
-                    <%=total = s + j%>
+                    <%total = s + j;%>
                     
                 <%}%>
                 <tr><td>Total</td><td><%=aux%></td><td><%=cont%></td><td><%=s%></td><td>---</td></tr>
                    
             </table>
+            <br/>
         
         <footer align="center">
             © 06/09 - 13/09. Todos os direitos reservados
