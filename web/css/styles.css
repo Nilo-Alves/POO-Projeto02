@@ -1,0 +1,18 @@
+#home-col1{
+	width: 32%; 
+	float: left;
+	margin-right: 0.5%;
+	margin-left: 1%;
+}
+#home-col2{
+	width: 32%; 
+	float: right;
+	margin-right: 0.5%;
+	margin-left: 0.5%;
+}
+#home-col3{
+	width: 32%; 
+	float: right;
+	margin-right: 1%;
+	margin-left: 0.5%;
+}
