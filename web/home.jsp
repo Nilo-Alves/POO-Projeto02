@@ -3,12 +3,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
         <title>Calculador de Amortização</title>
     </head>
     <body>
         <header align="center">
-            <%@include file="WEB-INF/jspf/menu.jspf" %>
-            <link rel="stylesheet" type="text/css" href="css/styles.css">
+            <%@include file="WEB-INF/jspf/menu.jspf" %>            
         </header>
         
         <hr/>

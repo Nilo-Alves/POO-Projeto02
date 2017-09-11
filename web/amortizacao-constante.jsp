@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Amortização Constante</title>
     </head>
@@ -18,7 +19,7 @@
         
         <%
             double s = 0, saux = 0, i = 0, p = 0, j = 0, a = 0, cont = 0, total = 0, aux = 0;
-            int n = 0;
+            int n = 0; String table;
             
             try {s = Double.parseDouble(request.getParameter("saldo"));}
             catch(Exception ex){}
@@ -26,6 +27,7 @@
             catch(Exception ex){}
             try {n = Integer.parseInt(request.getParameter("tempo"));}
             catch(Exception ex){}
+            table = request.getParameter("acao");
         %>
         <hr/>
         <h1>Sistema de Amortização Constante (SAC)</h1>
@@ -39,10 +41,11 @@
             <input type="number" name="indice" value="<%=i%>"/><br/><br/>
             Período:
             <input type="number" name="tempo" value="<%=n%>"/><br/><br/>
-            <input type="submit" value="Calcular">
+            <input type="submit" name="acao" value="Calcular">
         </form>
         <br/>
-            
+        
+        <%if (table != null) {%>
             <table border="1">
                 <%saux = s;%>
                 <%a = s / n;%>
@@ -67,7 +70,7 @@
                    
             </table>
             <br/>
-            
+            <%}%>
         
         <footer align="center">
             <%@include file="WEB-INF/jspf/footer.jspf" %>
