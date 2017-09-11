@@ -35,7 +35,7 @@
                     dividindo-se o valor do principal pelo número de períodos de
                     pagamento, ou seja, de parcelas.</p><br/>
                 <a href='amortizacao-constante.jsp'>
-                    <button class='home-button'>Calcular</button>
+                    <button class='button'>Calcular</button>
                 </a>
             </div>
             <div id='home-col3'>
@@ -50,7 +50,7 @@
                     parcela, há uma proporção relativa ao pagamento de juros e 
                     amortização do valor emprestado.</p><br/>
                 <a href='tabela-price.jsp'>
-                    <button class='home-button'>Calcular</button>
+                    <button class='button'>Calcular</button>
                 </a>
             </div>
             <div id='home-col2'> 
@@ -64,7 +64,7 @@
                     juros sempre incidem sobre o valor original da dívida. Com 
                     isso o devedor pode quitar sua dívida quando quiser.</p><br/>
                 <a href='amortizacao-americana.jsp'>
-                    <button class='home-button'>Calcular</button>
+                    <button class='button'>Calcular</button>
                 </a>
             </div>
         <footer id="footer" align="center">

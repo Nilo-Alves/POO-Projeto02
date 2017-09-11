@@ -36,18 +36,18 @@
         <br/>
         
         <form>
-            Saldo Devedor:
+            <label>Saldo Devedor:</label>
             <input type="number" name="saldo" value="<%=sal%>"/><br/><br/>
-            Juros:
+            <label>Juros:</label>
             <input type="number" name="juros" value="<%=tax%>"/><br/><br/>
-            Período:
+            <label>Período:</label>
             <input type="number" name="tempo" value="<%=n%>"/><br/><br/>
-            <input type="submit" name="acao" value="Calcular">
+            <input class='button' type="submit" name="acao" value="Calcular">
         </form>
         <br/>
         
         <%if (table != null) {%>
-            <table border="1">
+            <table align="center" border="1">
 
                     <tr><th>Período</th><th>Prestação</th><th>Juros</th><th>Amortização</th><th>Saldo Devedor</th></tr>
                     <tr><td>0</td><td></td><td></td><td></td><td><%=sal%></td></tr>
@@ -78,6 +78,9 @@
 
             </table>
             <br/>
+            <a href='amortizacao-americana.jsp'>
+                    <button class='button-apagar'>Apagar</button>
+            </a>
         <%}%>
         
         <footer align="center">

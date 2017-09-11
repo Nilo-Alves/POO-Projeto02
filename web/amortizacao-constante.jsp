@@ -35,18 +35,18 @@
         <br/>
         
         <form>
-            Saldo Devedor:
+            <label>Saldo Devedor:</label>
             <input type="number" name="saldo" value="<%=s%>"/><br/><br/>
-            Juros:
+            <label>Juros:</label>
             <input type="number" name="indice" value="<%=i%>"/><br/><br/>
-            Período:
+            <label>Período:</label>
             <input type="number" name="tempo" value="<%=n%>"/><br/><br/>
-            <input type="submit" name="acao" value="Calcular">
+            <input class='button' type="submit" name="acao" value="Calcular">
         </form>
         <br/>
         
         <%if (table != null) {%>
-            <table border="1">
+            <table align="center" border="1">
                 <%saux = s;%>
                 <%a = s / n;%>
                 <%j = (i/100);%>
@@ -70,6 +70,9 @@
                    
             </table>
             <br/>
+            <a href='amortizacao-constante.jsp'>
+                    <button class='button-apagar'>Apagar</button>
+            </a>
             <%}%>
         
         <footer align="center">

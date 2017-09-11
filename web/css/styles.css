@@ -3,6 +3,7 @@ header{
 }
 body{
     font-family: Arial;
+    text-align: center;
 }
 .p-1{
     font-size: 14px;
@@ -37,16 +38,31 @@ h1{
 	margin-left: 2%;
         text-align: center;
 }
-.home-button{
-        height: 35px;
+.button{
+        height: 33px;
         width: 90px;
         background-color: white;
-        border-radius: 20%;
+        border-radius: 17%;
         border-color: black;
         border-width: 2px;
+        cursor: pointer;
+}
+.button-apagar{
+        height: 23px;
+        width: 80px;
+        background-color: white;
+        border-color: black;
+        border-width: 1px;
         cursor: pointer;
 }
 footer{
     font-size: 13px;
     clear: both; 
+}
+label{
+    text-align: right;
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+    font-size: 13px;
 }
