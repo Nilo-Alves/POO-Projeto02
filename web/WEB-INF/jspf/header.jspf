@@ -1,0 +1,20 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8"%>
+<header id="title" align="center">
+        <img id="logo" src="images/logo.jpeg" href="home.jsp">
+        
+        <br/><br/>
+
+        <div id="title-div">
+            <h1 id="title-h1">AMORTIZAÇÃO</h1>
+        </div>
+            
+        <div id="menu">
+            
+            <a href="home.jsp">Home&nbsp;&nbsp;</a>
+            <strong> | </strong> <a href="amortizacao-constante.jsp">&nbsp;&nbsp;Constante&nbsp;&nbsp;</a>
+            <strong> | </strong> <a href="amortizacao-americana.jsp">&nbsp;&nbsp;Americana&nbsp;&nbsp;</a>
+            <strong> | </strong> <a href="tabela-price.jsp">&nbsp;&nbsp;Price</a>
+        <div>
+</header>
+            
