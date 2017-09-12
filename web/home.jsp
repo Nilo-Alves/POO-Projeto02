@@ -10,7 +10,7 @@
     <body>
         
         <%@include file="WEB-INF/jspf/header.jspf" %>
-        <br/>
+        <br/><br/><br/>
         <div id="oque-div">            
             <h2>O que é?</h2>
             <p id="text-1"> Amortização é um processo de extinção de uma dívida através
@@ -20,14 +20,15 @@
             devedor, podendo ser o reembolso de ambos, sendo que os juros
             são sempre calculados sobre o saldo devedor.</p>
         </div>
-        <br/>
+        <br/><br/><br/>
+        <div id="col">
             <div id='home-col1'>
                 <h2>Amortização Constante</h2>
                 <p class="p-1"> Sistema de Amortização Constante (SAC) é uma forma de 
                     amortização de um empréstimo por prestações que incluem 
                     os juros, amortizando assim partes iguais do valor total
-                    do empréstimo. Neste sistema o saldo devedor é reembolsado
-                    em valores de amortização iguais. Desta forma, no sistema
+                    do empréstimo. Nele o saldo devedor é reembolsado em 
+                    valores de amortização iguais. Desta forma, no sistema
                     SAC o valor das prestações é decrescente, já que os juros
                     diminuem a cada prestação. </p><br/>
                 <a href='amortizacao-constante.jsp'>
@@ -59,20 +60,23 @@
                     <button class='button'>Calcular</button>
                 </a>
             </div> 
-        <br/>
+        </div>
         <div id="team">
             <h2>Equipe</h2>
-            <div>
+            <div id="team-1">
                 <h3>Henrique Melo Santos</h3>
+                <img src="images/henrique.jpg" class="equipe">
             </div>
-            <div>
+            <div id="team-3">
                 <h3>Rafael dos Santos Souza</h3>
+                <img src="images/rafael.jpg" class="equipe">
             </div>
-            <div>
+            <div id="team-2">
                 <h3>Nilo Francisco Alves da Silva</h3>
+                <img src="images/nilo.jpg" class="equipe">
             </div>
         </div>
-        <br/>
+        
         
         <footer id="footer" align="center">
             <%@include file="WEB-INF/jspf/footer.jspf" %>

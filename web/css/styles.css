@@ -33,11 +33,17 @@ th{
     clear: both; 
     padding-top: 0.1%;
     padding-bottom: 0.01%;
+    display: table;
+}
+.equipe{
+    border-radius: 70%;
+    height: 50%;
+    width: 50%;
 }
 #logo{
     float: left;
     height: 80%;
-    width: 9%;
+    width: 8%;
     margin-top: 10px;
     margin-left: 10px;
     border-radius: 70%;
@@ -72,6 +78,9 @@ th{
         margin-left: 5%;
         margin-right: 5%;
         font-size: 16px;
+}
+#col{
+    display: table;
 }
 #home-col1{
 	width: 28%; 
@@ -113,8 +122,8 @@ th{
         border-radius: 10%;
 }
 .button{
-        height: 33px;
-        width: 90px;
+        height: 38px;
+        width: 100px;
         background-color: #3CB371;
         font-weight: bold;
         border-radius: 10%;
@@ -156,4 +165,40 @@ label{
 table{
     margin-bottom: 1%;
     margin-top: 2%;   
+}
+#team-1{
+	width: 28%;
+        float: left;
+
+	margin-right: 1%;
+	margin-left: 2%;
+        margin-bottom: 5%;
+        text-align: center;
+        padding-left: 1%;
+        padding-right: 1%;
+        padding-bottom: 2%;
+}
+#team-2{
+	width: 28%; 
+        float: right;
+        
+	margin-right: 1%;
+	margin-left: 1%;
+        margin-bottom: 5%;
+        text-align: center;
+        padding-left: 1%;
+        padding-right: 1%;
+        padding-bottom: 2%;
+}
+#team-3{
+	width: 28%; 
+        float: right;
+
+	margin-right: 2%;
+	margin-left: 1%;
+        margin-bottom: 5%;
+        text-align: center;
+        padding-left: 1%;
+        padding-right: 1%;
+        padding-bottom: 2%;
 }
