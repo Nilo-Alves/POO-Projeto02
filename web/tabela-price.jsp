@@ -85,8 +85,6 @@
         
         
         
-        <footer align="center">
-            <%@include file="WEB-INF/jspf/footer.jspf" %>
-        </footer>
-    </body>
-</html>
+          <footer align="center">
+              <%@include file="WEB-INF/jspf/footer.jspf" %>
+          </footer>
