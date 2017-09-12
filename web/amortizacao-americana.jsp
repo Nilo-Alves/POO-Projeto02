@@ -4,18 +4,17 @@
     Author     : Nilo
 --%>
 
+<%@page import="java.text.DecimalFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Amortização Americano</title>
+        <title>Amortização Americana</title>
     </head>
     <body>
-        <header align="center">
-            <%@include file="WEB-INF/jspf/menu.jspf" %>
-        </header>
+        <%@include file="WEB-INF/jspf/header.jspf" %>
         <%
             double sal = 0, tax = 0; 
             int n = 0;
@@ -29,11 +28,7 @@
             catch(Exception ex){}
             table = request.getParameter("acao");
         %>
-        
-        <hr/>
-        <h1>Sistema de Amortização Americano (SAA)</h1>
-        <hr/>
-        <br/>
+        <h2>Sistema de Amortização Americana</h2>
         
         <form>
             <label>Saldo Devedor:</label>
@@ -50,7 +45,7 @@
             <table align="center" border="1">
 
                     <tr><th>Período</th><th>Prestação</th><th>Juros</th><th>Amortização</th><th>Saldo Devedor</th></tr>
-                    <tr><td>0</td><td></td><td></td><td></td><td><%=sal%></td></tr>
+                    <tr><th>0</th><td></td><td></td><td></td><td><%=new DecimalFormat("0.00").format(sal)%></td></tr>
 
                     <% 
                        double jur = sal * (tax/100);
@@ -62,25 +57,31 @@
                         }
                     %>
                         <tr>
-                            <td><%=c%></td>
-                            <td><%=(jur + amort)%></td>
+                            <th><%=c%></th>
+                            <td><%=new DecimalFormat("0.00").format(jur + amort)%></td>
                             <%tprest = tprest + (jur + amort);%>
-                            <td><%=jur%></td>
+                            <td><%=new DecimalFormat("0.00").format(jur)%></td>
                             <%tjur = tjur + jur;%>
-                            <td><%=amort%></td>
+                            <td><%=new DecimalFormat("0.00").format(amort)%></td>
                             <%tamort = tamort + amort;%>
-                            <td><%=sal%></td>
+                            <td><%=new DecimalFormat("0.00").format(sal)%></td>
                             <%sal = sal - amort;%>
                         </tr>
                     <%}%>
 
-                    <tr><td>Total</td><td><%=tprest%></td><td><%=tjur%></td><td><%=tamort%></td><td>---</td></tr>
+                    <tr><th>Total</th>
+                        <td><%=new DecimalFormat("0.00").format(tprest)%></td>
+                        <td><%=new DecimalFormat("0.00").format(tjur)%></td>
+                        <td><%=new DecimalFormat("0.00").format(tamort)%></td>
+                        <td>---</td>
+                    </tr>
 
             </table>
-            <br/>
+            
             <a href='amortizacao-americana.jsp'>
                     <button class='button-apagar'>Apagar</button>
             </a>
+            
         <%}%>
         
         <footer align="center">

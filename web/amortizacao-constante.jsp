@@ -3,6 +3,7 @@
     Created on : 06/09/2017, 22:57:33
     Author     : Nilo
 --%>
+<%@page import="java.text.DecimalFormat"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="f"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,10 +14,7 @@
         <title>Amortização Constante</title>
     </head>
     <body>
-        <header align="center">
-            <%@include file="WEB-INF/jspf/menu.jspf" %>
-        </header>
-        
+        <%@include file="WEB-INF/jspf/header.jspf" %>
         <%
             double s = 0, saux = 0, i = 0, p = 0, j = 0, a = 0, cont = 0, total = 0, aux = 0;
             int n = 0; String table;
@@ -29,10 +27,7 @@
             catch(Exception ex){}
             table = request.getParameter("acao");
         %>
-        <hr/>
-        <h1>Sistema de Amortização Constante (SAC)</h1>
-        <hr/>
-        <br/>
+        <h2>Sistema de Amortização Constante</h2>
         
         <form>
             <label>Saldo Devedor:</label>
@@ -51,28 +46,34 @@
                 <%a = s / n;%>
                 <%j = (i/100);%>
                 <tr><th>Período</th><th>Prestação</th><th>Juros</th><th>Amortização</th><th>Saldo Devedor</th></tr>
-                <tr><td>0</td><td></td><td></td><td></td><td><%=s%></td></tr>
+                <tr><th>0</th><td></td><td></td><td></td><td><%=new DecimalFormat("0.00").format(s)%></td></tr>
                                 
                 <%for (int k=1; k<=n; k++) {%>
                     <tr>
-                        <td><%=k%></td>
-                        <td><%=a+(j*saux)%></td>
+                        <th><%=new DecimalFormat("0.00").format(k)%></th>
+                        <td><%=new DecimalFormat("0.00").format(a+(j*saux))%></td>
                         <%aux = aux + (a+(j*saux));%>
-                        <td><%=j * saux%></td>
+                        <td><%=new DecimalFormat("0.00").format(j * saux)%></td>
                         <%cont = cont + (j*saux);%>
-                        <td><%=a%></td>
-                        <td><%=saux = saux - a%></td>
+                        <td><%=new DecimalFormat("0.00").format(a)%></td>
+                        <td><%=new DecimalFormat("0.00").format(saux = saux - a)%></td>
                     </tr>
                     <%total = s + j;%>
                     
                 <%}%>
-                <tr><td>Total</td><td><%=aux%></td><td><%=cont%></td><td><%=s%></td><td>---</td></tr>
+                <tr><th>Total</th>
+                    <td><%=new DecimalFormat("0.00").format(aux)%></td>
+                    <td><%=new DecimalFormat("0.00").format(cont)%></td>
+                    <td><%=new DecimalFormat("0.00").format(s)%></td>
+                    <td>---</td>
+                </tr>
                    
             </table>
-            <br/>
+            
             <a href='amortizacao-constante.jsp'>
                     <button class='button-apagar'>Apagar</button>
             </a>
+            <br/>
             <%}%>
         
         <footer align="center">
