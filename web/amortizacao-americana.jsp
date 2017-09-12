@@ -32,9 +32,9 @@
         
         <form>
             <label>Saldo Devedor:</label>
-            <input type="number" name="saldo" value="<%=sal%>"/><br/><br/>
+            <input type="text" name="saldo" value="<%=sal%>"/><br/><br/>
             <label>Juros:</label>
-            <input type="number" name="juros" value="<%=tax%>"/><br/><br/>
+            <input type="text" name="juros" value="<%=tax%>"/><br/><br/>
             <label>Período:</label>
             <input type="number" name="tempo" value="<%=n%>"/><br/><br/>
             <input class='button' type="submit" name="acao" value="Calcular">

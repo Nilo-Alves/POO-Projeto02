@@ -10,13 +10,17 @@
     <body>
         
         <%@include file="WEB-INF/jspf/header.jspf" %>
-        <h2>O que é?</h2>
-        <p id="text-1"> Amortização é um processo de extinção de uma dívida através
-        de pagamentos periódicos, que são realizados em função de um
-        planejamento, de modo que cada prestação corresponde à soma
-        do reembolso do capital ou do pagamento dos juros do saldo
-        devedor, podendo ser o reembolso de ambos, sendo que os juros
-        são sempre calculados sobre o saldo devedor.</p><br/>
+        <br/>
+        <div id="oque-div">            
+            <h2>O que é?</h2>
+            <p id="text-1"> Amortização é um processo de extinção de uma dívida através
+            de pagamentos periódicos, que são realizados em função de um
+            planejamento, de modo que cada prestação corresponde à soma
+            do reembolso do capital ou do pagamento dos juros do saldo
+            devedor, podendo ser o reembolso de ambos, sendo que os juros
+            são sempre calculados sobre o saldo devedor.</p>
+        </div>
+        <br/>
             <div id='home-col1'>
                 <h2>Amortização Constante</h2>
                 <p class="p-1"> Sistema de Amortização Constante (SAC) é uma forma de 

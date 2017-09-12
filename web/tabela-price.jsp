@@ -12,16 +12,13 @@
     <head>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Tabela Price</title>
     </head>
     <body>
-        <header align="center">
-            <%@include file="WEB-INF/jspf/menu.jspf" %>
-        </header>
-        
+        <%@include file="WEB-INF/jspf/header.jspf" %>
         <%
-            double s = 0, saux = 0, i = 0, p = 0, j = 0, a = 0, cont = 0, total = 0, aux = 0, pmt = 0, ji = 0, auxi = 0;
-            int n = 0, valor = 0; String table;
+            double s = 0, saux = 0, i = 0;
+            int n = 0 ; String table;
             
             try {s = Double.parseDouble(request.getParameter("saldo"));}
             catch(Exception ex){}
@@ -30,19 +27,14 @@
             try {n = Integer.parseInt(request.getParameter("tempo"));}
             catch(Exception ex){}
             table = request.getParameter("acao");
-            
-            
-            
-
-%>
-        
-        <h1>Tabela Price</h1>
+%>        
+        <h2>Tabela Price</h2>
         
         <form>
             <label>Saldo Devedor:</label>
-            <input type="number" name="saldo" value="<%=s%>"/><br/><br/>
+            <input type="text" name="saldo" value="<%=s%>"/><br/><br/>
             <label>Juros:</label>
-            <input type="number" name="indice" value="<%=i%>"/><br/><br/>
+            <input type="text" name="indice" value="<%=i%>"/><br/><br/>
             <label>Período:</label>
             <input type="number" name="tempo" value="<%=n%>"/><br/><br/>
             <input class='button' type="submit" name="acao" value="Calcular">
@@ -52,35 +44,37 @@
         <%if (table != null) {%>
             <table align="center" border="1">
                 
-                <%pmt = (s*(i/100)) / (1-(1 / (Math.pow((1+ji), i))));%>
+                <%double aux=i/100, a=0, ta = 0, juros = 0, tjuros = 0 , tpmt = 0;%>
+                <%double pmt=(s*aux)/(1- (1/(Math.pow(1+aux,n))));%>
                 <%saux = s;%>
-                <%ji = 1/100;%>
-                <%j = (i/100)*saux;%>
-                <%a = pmt-j;%>
+                <%juros = (i/100)*s;%>
+                <%a = pmt-juros;%>
                 
-                
-                
-                <tr><th>Período</th><th>Saldo Devedor</th><th>Parcela</th><th>Juros</th><th>Amortização</th></tr>
-                <tr><td>0</td><td><%=s%></td><td></td><td></td><td></td></tr>
+                <tr><th>Período</th><th>Parcela</th><th>Juros</th><th>Amortização</th><th>Saldo Devedor</th></tr>
+                <tr><th>0</th><td></td><td></td><td></td><td><%=new DecimalFormat("0.00").format(s)%></td></tr>
                                 
                 <%for (int k=1; k<=n; k++) {%>
                     <tr>
-                        <td><%=k%></td>     <!--Período  OK-->
-                        
-                        <td><%=saux = saux-a%></td>    <!--Saldo devedor-->
-                        <%aux = s -saux;%>
+                        <th><%=k%></th>     <!--Período  OK-->
                         
                         <td><%=new DecimalFormat("0.00").format(pmt)%></td>   <!--Parcela-->
-                        <%cont = cont + (j*saux);%>
+                        <%tpmt = tpmt + pmt;%>
+                       
+                        <td><%=new DecimalFormat("0.00").format(juros = (aux)*saux)%></td>     <!--Juros-->
+                        <%tjuros = tjuros + juros;%>
                         
-                        <td><%=j%></td>     <!--Juros-->
+                        <td><%=new DecimalFormat("0.00").format(a = pmt-juros)%></td>     <!--Amortização-->
+                        <%ta = ta + a;%>
                         
-                        <td><%=a%></td>     <!--Amortização-->
-                    </tr>
-                    <%total = s + j;%>
-                    
+                        <td><%=new DecimalFormat("0.00").format(saux = saux - a)%></td>    <!--Saldo devedor-->                                                
+                    </tr>                                        
                 <%}%>
-                
+                    <tr><th>Total</th>
+                        <td><%=new DecimalFormat("0.00").format(tpmt)%></td>
+                        <td><%=new DecimalFormat("0.00").format(tjuros)%></td>
+                        <td><%=new DecimalFormat("0.00").format(ta)%></td>
+                        <td>---</td>
+                    </tr>
                    
             </table>
             <br/>

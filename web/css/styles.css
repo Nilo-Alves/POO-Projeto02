@@ -20,6 +20,14 @@ h1{
 th{
     background-color: #43CD80;
 }
+#oque-div{
+    background-color: #43CD80;
+    border-radius: 15%;
+    height: 10%;
+    width: 75%;
+    margin-left: 12.5%;
+    padding-top: 1px;
+}
 #team{
     background-color: #43CD80;
     clear: both; 
@@ -28,8 +36,8 @@ th{
 }
 #logo{
     float: left;
-    height: 80px;
-    width: 80px;
+    height: 80%;
+    width: 9%;
     margin-top: 10px;
     margin-left: 10px;
     border-radius: 70%;
@@ -145,6 +153,5 @@ label{
 }
 table{
     margin-bottom: 1%;
-    margin-top: 2%;
-    
+    margin-top: 2%;   
 }

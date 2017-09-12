@@ -31,9 +31,9 @@
         
         <form>
             <label>Saldo Devedor:</label>
-            <input type="number" name="saldo" value="<%=s%>"/><br/><br/>
+            <input type="text" name="saldo" value="<%=s%>"/><br/><br/>
             <label>Juros:</label>
-            <input type="number" name="indice" value="<%=i%>"/><br/><br/>
+            <input type="text" name="indice" value="<%=i%>"/><br/><br/>
             <label>Período:</label>
             <input type="number" name="tempo" value="<%=n%>"/><br/><br/>
             <input class='button' type="submit" name="acao" value="Calcular">
