@@ -1,15 +1,63 @@
-header{
-    font-size: 13px;
+a{
+    text-decoration: none;
+    color: black;
 }
 body{
     font-family: Arial;
     text-align: center;
+    background-color: #98FB98;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 .p-1{
     font-size: 14px;
 }
 h1{
     text-align: center;
+}
+th{
+    background-color: #43CD80;
+}
+#team{
+    background-color: #43CD80;
+    clear: both; 
+    padding-top: 0.1%;
+    padding-bottom: 0.01%;
+}
+#logo{
+    float: left;
+    height: 80px;
+    width: 80px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 70%;
+}
+#title{
+    background-color: #3CB371;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    height: 100px;
+    font-size: 16px;
+}
+#title-div{
+    float: left;
+    text-align: right;
+}
+#menu{
+    float: right;
+    text-align: left;
+    margin-top: 10px;
+    margin-right: 30px;
+}
+#title-h1{
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-bottom: 0px;
+    font-size: 32px;
 }
 #text-1{
         text-align: center;
@@ -18,46 +66,75 @@ h1{
         font-size: 16px;
 }
 #home-col1{
-	width: 29%; 
+	width: 28%; 
 	float: left;
-	margin-right: 2%;
-	margin-left: 2.5%;
+	margin-right: 1.5%;
+	margin-left: 2%;
+        margin-bottom: 5%;
         text-align: center;
+        background-color: #43CD80;
+        padding-left: 1%;
+        padding-right: 1%;
+        padding-bottom: 2%;
+        border-radius: 10%;
 }
 #home-col2{
-	width: 29%; 
+	width: 28%; 
 	float: right;
-	margin-right: 2%;
-	margin-left: 2%;
+	margin-right: 1.5%;
+	margin-left: 1.5%;
+        margin-bottom: 5%;
         text-align: center;
+        background-color: #43CD80;
+        padding-left: 1%;
+        padding-right: 1%;
+        padding-bottom: 2%;
+        border-radius: 10%;
 }
 #home-col3{
-	width: 29%; 
+	width: 28%; 
 	float: right;
-	margin-right: 2.5%;
-	margin-left: 2%;
+	margin-right: 2%;
+	margin-left: 1.5%;
+        margin-bottom: 5%;
         text-align: center;
+        background-color: #43CD80;
+        padding-left: 1%;
+        padding-right: 1%;
+        padding-bottom: 2%;
+        border-radius: 10%;
 }
 .button{
         height: 33px;
         width: 90px;
-        background-color: white;
-        border-radius: 17%;
+        background-color: #3CB371;
+        font-weight: bold;
+        border-radius: 10%;
         border-color: black;
-        border-width: 2px;
+        border-width: 1px;
         cursor: pointer;
 }
 .button-apagar{
         height: 23px;
         width: 80px;
-        background-color: white;
+        background-color: #4EEE94;
         border-color: black;
         border-width: 1px;
         cursor: pointer;
+        margin-top: 0px;
+        margin-bottom: 2%;
+        border-radius: 10%;
 }
 footer{
     font-size: 13px;
     clear: both; 
+    background-color: #3CB371;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    height: 70px;
+    font-size: 16px;
 }
 label{
     text-align: right;
@@ -65,4 +142,9 @@ label{
     width: 100px;
     font-weight: bold;
     font-size: 13px;
+}
+table{
+    margin-bottom: 1%;
+    margin-top: 2%;
+    
 }
