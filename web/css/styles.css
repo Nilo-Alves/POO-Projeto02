@@ -142,7 +142,6 @@ th{
         border-radius: 10%;
 }
 footer{
-    font-size: 13px;
     clear: both; 
     background-color: #3CB371;
     margin-top: 0px;
@@ -150,9 +149,9 @@ footer{
     margin-left: 0px;
     margin-right: 0px;
     height: auto;
-    min-height: 70px;
+    min-height: 30px;
     font-size: 16px;
-    
+    padding-bottom: 15px;
 }
 label{
     text-align: right;

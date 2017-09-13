@@ -19,12 +19,27 @@
             double s = 0, saux = 0, i = 0, p = 0, j = 0, a = 0, cont = 0, total = 0, aux = 0;
             int n = 0; String table;
             
-            try {s = Double.parseDouble(request.getParameter("saldo"));}
-            catch(Exception ex){}
-            try {i = Double.parseDouble(request.getParameter("indice"));}
-            catch(Exception ex){}
-            try {n = Integer.parseInt(request.getParameter("tempo"));}
-            catch(Exception ex){}
+            if (request.getParameter("saldo") != null){
+                try {s = Double.parseDouble(request.getParameter("saldo"));}
+                catch(Exception ex){%>
+                <script>
+                    alert("Parâmetro Inválido - Somente números!");
+                </script>
+            <%}}
+            if (request.getParameter("indice") != null){    
+                try {i = Double.parseDouble(request.getParameter("indice"));}
+                catch(Exception ex){%>
+                <script>
+                    alert("Parâmetro Inválido - Somente números!");
+                </script>
+            <%}}
+            if (request.getParameter("tempo") != null){
+                try {n = Integer.parseInt(request.getParameter("tempo"));}
+                catch(Exception ex){%>
+                <script>
+                    alert("Parâmetro Inválido - Somente números!");
+                </script>
+            <%}}
             table = request.getParameter("acao");
         %>
         <h2>Sistema de Amortização Constante</h2>
@@ -51,7 +66,7 @@
 
                     <%for (int k=1; k<=n; k++) {%>
                         <tr>
-                            <th><%=new DecimalFormat("0.00").format(k)%></th>
+                            <th><%=k%></th>
                             <td>R$ <%=new DecimalFormat("0.00").format(a+(j*saux))%></td>
                             <%aux = aux + (a+(j*saux));%>
                             <td>R$ <%=new DecimalFormat("0.00").format(j * saux)%></td>

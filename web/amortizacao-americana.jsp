@@ -20,12 +20,27 @@
             int n = 0;
             String table;
             
-            try {sal = Double.parseDouble(request.getParameter("saldo"));}
-            catch(Exception ex){}
-            try {tax = Double.parseDouble(request.getParameter("juros"));}
-            catch(Exception ex){}
-            try {n = Integer.parseInt(request.getParameter("tempo"));}
-            catch(Exception ex){}
+            if (request.getParameter("saldo") != null){
+                try {sal = Double.parseDouble(request.getParameter("saldo"));}
+                catch(Exception ex){%>
+                    <script>
+                        alert("Parâmetro Inválido - Somente números!");
+                    </script>
+            <%}}
+            if (request.getParameter("juros") != null){
+                try {tax = Double.parseDouble(request.getParameter("juros"));}
+                catch(Exception ex){%>
+                <script>
+                    alert("Parâmetro Inválido - Somente números!");
+                </script>
+            <%}}
+            if (request.getParameter("tempo") != null){
+                try {n = Integer.parseInt(request.getParameter("tempo"));}
+                catch(Exception ex){%>
+                <script>
+                    alert("Parâmetro Inválido - Somente números!");
+                </script>
+            <%}}
             table = request.getParameter("acao");
         %>
         <h2>Sistema de Amortização Americana</h2>
