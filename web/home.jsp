@@ -67,10 +67,6 @@
                 <h3>Henrique Melo Santos</h3>
                 <img src="images/henrique.jpg" class="equipe">
             </div>
-            <div id="team-3">
-                <h3>Rafael dos Santos Souza</h3>
-                <img src="images/rafael.jpg" class="equipe">
-            </div>
             <div id="team-2">
                 <h3>Nilo Francisco Alves da Silva</h3>
                 <img src="images/nilo.jpg" class="equipe">

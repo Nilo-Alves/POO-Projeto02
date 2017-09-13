@@ -3,16 +3,16 @@
 <header id="title" align="center">
     <a href="home.jsp">
         <img id="logo" src="images/logo.jpeg">
-    </a>    
+      
         <br/><br/>
 
         <div id="title-div">
             <h1 id="title-h1">AMORTIZAÇÃO</h1>
         </div>
-            
+    </a>          
         <div id="menu">
             
-            <a href="home.jsp">Home&nbsp;&nbsp;</a>
+            <a href="home.jsp">Início&nbsp;&nbsp;</a>
             <strong> | </strong> <a href="amortizacao-constante.jsp">&nbsp;&nbsp;Constante&nbsp;&nbsp;</a>
             <strong> | </strong> <a href="amortizacao-americana.jsp">&nbsp;&nbsp;Americana&nbsp;&nbsp;</a>
             <strong> | </strong> <a href="tabela-price.jsp">&nbsp;&nbsp;Price</a>
