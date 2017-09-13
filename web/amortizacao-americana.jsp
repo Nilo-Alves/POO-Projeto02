@@ -32,20 +32,21 @@
         
         <form>
             <label>Saldo Devedor:</label>
-            <input type="text" name="saldo" value="<%=sal%>"/><br/><br/>
-            <label>Juros:</label>
-            <input type="text" name="juros" value="<%=tax%>"/><br/><br/>
-            <label>Período:</label>
-            <input type="number" name="tempo" value="<%=n%>"/><br/><br/>
+            <input id="input" type="text" name="saldo" value="<%=new DecimalFormat("0").format(sal)%>"/><br/><br/>
+            <label>Taxa de Juros (%):</label>
+            <input id="input" type="text" name="juros" value="<%=new DecimalFormat("0").format(tax)%>"/><br/><br/>
+            <label>Nº de Períodos:</label>
+            <input id="input" type="number" name="tempo" value="<%=n%>"/><br/><br/>
             <input class='button' type="submit" name="acao" value="Calcular">
         </form>
         <br/>
         
         <%if (table != null) {%>
+            <%if (sal != 0 && n != 0) {%>
             <table align="center" border="1">
 
                     <tr><th>Período</th><th>Prestação</th><th>Juros</th><th>Amortização</th><th>Saldo Devedor</th></tr>
-                    <tr><th>0</th><td></td><td></td><td></td><td><%=new DecimalFormat("0.00").format(sal)%></td></tr>
+                    <tr><th>0</th><td></td><td></td><td></td><td>R$ <%=new DecimalFormat("0.00").format(sal)%></td></tr>
 
                     <% 
                        double jur = sal * (tax/100);
@@ -58,21 +59,21 @@
                     %>
                         <tr>
                             <th><%=c%></th>
-                            <td><%=new DecimalFormat("0.00").format(jur + amort)%></td>
+                            <td>R$ <%=new DecimalFormat("0.00").format(jur + amort)%></td>
                             <%tprest = tprest + (jur + amort);%>
-                            <td><%=new DecimalFormat("0.00").format(jur)%></td>
+                            <td>R$ <%=new DecimalFormat("0.00").format(jur)%></td>
                             <%tjur = tjur + jur;%>
-                            <td><%=new DecimalFormat("0.00").format(amort)%></td>
+                            <td>R$ <%=new DecimalFormat("0.00").format(amort)%></td>
                             <%tamort = tamort + amort;%>
-                            <td><%=new DecimalFormat("0.00").format(sal)%></td>
+                            <td>R$ <%=new DecimalFormat("0.00").format(sal)%></td>
                             <%sal = sal - amort;%>
                         </tr>
                     <%}%>
 
                     <tr><th>Total</th>
-                        <td><%=new DecimalFormat("0.00").format(tprest)%></td>
-                        <td><%=new DecimalFormat("0.00").format(tjur)%></td>
-                        <td><%=new DecimalFormat("0.00").format(tamort)%></td>
+                        <td>R$ <%=new DecimalFormat("0.00").format(tprest)%></td>
+                        <td>R$ <%=new DecimalFormat("0.00").format(tjur)%></td>
+                        <td>R$ <%=new DecimalFormat("0.00").format(tamort)%></td>
                         <td>---</td>
                     </tr>
 
@@ -81,7 +82,13 @@
             <a href='amortizacao-americana.jsp'>
                     <button class='button-apagar'>Apagar</button>
             </a>
-            
+            <%}else if (sal == 0 && n == 0) {%>
+                <h3 style="color: red">*Preencha os campos "Saldo Devedor" e "Nº de Periodos" corretamente</h3>
+            <%}else if (sal == 0) {%>
+                <h3 style="color: red">*Preencha o campo "Saldo Devedor" corretamente</h3>
+            <%}else if (n == 0) {%>
+                <h3 style="color: red">*Preencha o campo "Nº de Periodos" corretamente</h3>
+            <%}%>
         <%}%>
         
         <footer align="center">

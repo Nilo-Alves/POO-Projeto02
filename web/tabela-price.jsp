@@ -32,55 +32,63 @@
         
         <form>
             <label>Saldo Devedor:</label>
-            <input type="text" name="saldo" value="<%=s%>"/><br/><br/>
-            <label>Juros:</label>
-            <input type="text" name="indice" value="<%=i%>"/><br/><br/>
-            <label>Período:</label>
-            <input type="number" name="tempo" value="<%=n%>"/><br/><br/>
+            <input id="input" type="text" name="saldo" value="<%=new DecimalFormat("0").format(s)%>"/><br/><br/>
+            <label>Taxa de Juros (%):</label>
+            <input id="input" type="text" name="indice" value="<%=new DecimalFormat("0").format(i)%>"/><br/><br/>
+            <label>Nº de Períodos:</label>
+            <input id="input" type="number" name="tempo" value="<%=n%>"/><br/><br/>
             <input class='button' type="submit" name="acao" value="Calcular">
         </form>
         <br/>
         
         <%if (table != null) {%>
-            <table align="center" border="1">
-                
-                <%double aux=i/100, a=0, ta = 0, juros = 0, tjuros = 0 , tpmt = 0;%>
-                <%double pmt=(s*aux)/(1- (1/(Math.pow(1+aux,n))));%>
-                <%saux = s;%>
-                <%juros = (i/100)*s;%>
-                <%a = pmt-juros;%>
-                
-                <tr><th>Período</th><th>Parcela</th><th>Juros</th><th>Amortização</th><th>Saldo Devedor</th></tr>
-                <tr><th>0</th><td></td><td></td><td></td><td><%=new DecimalFormat("0.00").format(s)%></td></tr>
-                                
-                <%for (int k=1; k<=n; k++) {%>
-                    <tr>
-                        <th><%=k%></th>     <!--Período  OK-->
-                        
-                        <td><%=new DecimalFormat("0.00").format(pmt)%></td>   <!--Parcela-->
-                        <%tpmt = tpmt + pmt;%>
-                       
-                        <td><%=new DecimalFormat("0.00").format(juros = (aux)*saux)%></td>     <!--Juros-->
-                        <%tjuros = tjuros + juros;%>
-                        
-                        <td><%=new DecimalFormat("0.00").format(a = pmt-juros)%></td>     <!--Amortização-->
-                        <%ta = ta + a;%>
-                        
-                        <td><%=new DecimalFormat("0.00").format(saux = saux - a)%></td>    <!--Saldo devedor-->                                                
-                    </tr>                                        
-                <%}%>
-                    <tr><th>Total</th>
-                        <td><%=new DecimalFormat("0.00").format(tpmt)%></td>
-                        <td><%=new DecimalFormat("0.00").format(tjuros)%></td>
-                        <td><%=new DecimalFormat("0.00").format(ta)%></td>
-                        <td>---</td>
-                    </tr>
-                   
-            </table>
-            <br/>
-            <a href='tabela-price.jsp'>
-                    <button class='button-apagar'>Apagar</button>
-            </a>
+            <%if (s != 0 && n != 0) {%>
+                <table align="center" border="1">
+
+                    <%double aux=i/100, a=0, ta = 0, juros = 0, tjuros = 0 , tpmt = 0;%>
+                    <%double pmt=(s*aux)/(1- (1/(Math.pow(1+aux,n))));%>
+                    <%saux = s;%>
+                    <%juros = (i/100)*s;%>
+                    <%a = pmt-juros;%>
+
+                    <tr><th>Período</th><th>Prestação</th><th>Juros</th><th>Amortização</th><th>Saldo Devedor</th></tr>
+                    <tr><th>0</th><td></td><td></td><td></td><td>R$ <%=new DecimalFormat("0.00").format(s)%></td></tr>
+
+                    <%for (int k=1; k<=n; k++) {%>
+                        <tr>
+                            <th><%=k%></th>     <!--Período  OK-->
+
+                            <td>R$<%=new DecimalFormat("0.00").format(pmt)%></td>   <!--Parcela-->
+                            <%tpmt = tpmt + pmt;%>
+
+                            <td>R$<%=new DecimalFormat("0.00").format(juros = (aux)*saux)%></td>     <!--Juros-->
+                            <%tjuros = tjuros + juros;%>
+
+                            <td>R$<%=new DecimalFormat("0.00").format(a = pmt-juros)%></td>     <!--Amortização-->
+                            <%ta = ta + a;%>
+
+                            <td>R$<%=new DecimalFormat("0.00").format(saux = saux - a)%></td>    <!--Saldo devedor-->                                                
+                        </tr>                                        
+                    <%}%>
+                        <tr><th>Total</th>
+                            <td>R$ <%=new DecimalFormat("0.00").format(tpmt)%></td>
+                            <td>R$ <%=new DecimalFormat("0.00").format(tjuros)%></td>
+                            <td>R$ <%=new DecimalFormat("0.00").format(ta)%></td>
+                            <td>---</td>
+                        </tr>
+
+                </table>
+                <br/>
+                <a href='tabela-price.jsp'>
+                        <button class='button-apagar'>Apagar</button>
+                </a>
+            <%}else if (s == 0 && n == 0) {%>
+                <h3 style="color: red">*Preencha os campos "Saldo Devedor" e "Nº de Periodos" corretamente</h3>
+            <%}else if (s == 0) {%>
+                <h3 style="color: red">*Preencha o campo "Saldo Devedor" corretamente</h3>
+            <%}else if (n == 0) {%>
+                <h3 style="color: red">*Preencha o campo "Nº de Periodos" corretamente</h3>
+            <%}%>
         <%}%>
         
         
